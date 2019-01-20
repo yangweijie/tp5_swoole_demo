@@ -43,4 +43,64 @@ composer require topthink/think-swoole
 
 
 
+# ptrace
+
+array:5 [▼
+  "chatid" => "chat13280cb4120b6aae2d94fad60bf4a289"
+  "openConversationId" => "cidK2gTCMAZZxg2PxFEm145gw=="
+  "conversationTag" => 2
+  "errmsg" => "ok"
+  "errcode" => 0
+]
+
+# tcp 的实现
+
+## 类
+'swoole_class' => 'app\http\Swoole' 指定一个类
+
+所有的其他配置放在类的 options里
+
+## 特殊配置
+    'pid_file'=>'swoole_pid',
+    'log_file'=>'swoole.log',
+
+pid_file 最好设置一下
+
+然后log_file 也指定一下 方便调试
+
+## 调试阶段
+
+daemonize => false
+
+然后就不会记录日志 ，直接显示在屏上。  开启，则会记录在日志里。
+
+如果程序出错， 会记录到 runtime 日期_cli.log里
+
+最后指定 'exception_handle'       => 'app\common\lib\Handle',
+
+好统一报错到你指定的频道 如我的例子是钉钉。
+
+## 工具 
+
+tcp/udp socket 调试工具。
+
+## inotify reload 扩展
+
+https://github.com/yangweijie/note/issues/59
+
+# 疑惑
+
+看了think\swoole 的源码 发现http 服务里 有一个自带的 monitor 
+
+感觉tcp 里配了也不起作用。
+
+官方的pid_file 获取好像有bug， 按照官方的设置的server  php think swoole:server 
+
+start 后 stop | reload 都不会精确判断。
+
+
+如果想 正确控制 启动 和监控文件变化 ，请参考 [如何用thinkphp5.1和vue 开发一个小游戏] (https://www.kancloud.cn/book/yangweijie/how_to_develop_one_game_with_tp5_1_vue/dashboard) 
+
+里的 类里自己自定义 构造方法 后 手动判断是否启动后 执行init 方法。
+
 
