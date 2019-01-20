@@ -104,9 +104,9 @@ start 后 stop | reload 都不会精确判断。
 里的 类里自己自定义 构造方法 后 手动判断是否启动后 执行init 方法。
 
 ## 效果图
-![](https://www.kancloud.cn/5b83ce36-41af-4669-b7d7-54ae7e59131f)
-![](https://www.kancloud.cn/eb1f9109-0915-4962-ab41-8e9279783f1a)
+![1](https://www.kancloud.cn/5b83ce36-41af-4669-b7d7-54ae7e59131f)
+![2](https://www.kancloud.cn/eb1f9109-0915-4962-ab41-8e9279783f1a)
 
-![](https://www.kancloud.cn/809114e5-be10-4ee5-9c06-ec31edb0f55f)
+![3](https://www.kancloud.cn/809114e5-be10-4ee5-9c06-ec31edb0f55f)
 
-![](https://www.kancloud.cn/49981892-7620-4cde-8663-446a02b3e1c7)
+![4](https://www.kancloud.cn/49981892-7620-4cde-8663-446a02b3e1c7)
